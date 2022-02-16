@@ -67,7 +67,7 @@ EOF
 }
 
 module "lambda_function_name" {
-  source = "github.com/traveloka/terraform-aws-resource-naming.git?ref=v0.17.0"
+  source = "github.com/traveloka/terraform-aws-resource-naming.git?ref=v0.19.1"
 
   name_prefix = "bei-ami-sharing"
   resource_type = "lambda_function"
@@ -90,7 +90,7 @@ resource "aws_ssm_parameter" "target_accounts" {
 }
 
 module "lambda_role" {
-  source = "github.com/traveloka/terraform-aws-iam-role.git//modules/service?ref=v1.0.2"
+  source = "github.com/traveloka/terraform-aws-iam-role.git//modules/service?ref=v2.0.2"
   role_identifier = "ami-sharing"
   role_description = "Service Role for lambda to share bei services AMI to multiple AWS accounts"
   role_force_detach_policies = true
